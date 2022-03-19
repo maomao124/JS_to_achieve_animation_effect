@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：JS_to_achieve_animation_effect
+  File name(文件名): test2
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/3/19
+  Time(创建时间)： 21:03
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test2.css">
+</head>
+<body>
+
+
+<div id="view">
+    <ul id="img_list">
+        <li style="background-color: #87ceeb;"></li>
+        <li style="background-color: #ff69b4;"></li>
+        <li style="background-color: #98fb98;"></li>
+    </ul>
+</div>
+
+
+<script>
+    var img_list = document.getElementById('img_list');
+    setInterval(function ()
+    {
+        for (var i = 0; i <= 100; i++)
+        {
+            (function (pos)
+            {
+                setTimeout(function ()
+                {
+                    img_list.style.left = -(pos / 100) * 320 + 'px';
+                }, (pos + 1) * 10)
+            })(i)
+        }
+        var current = img_list.children[0];
+        setTimeout(function ()
+        {
+            img_list.appendChild(current);
+            img_list.style.left = '0px';
+        }, 1100);
+    }, 2000);
+</script>
+
+
+</body>
+</html>

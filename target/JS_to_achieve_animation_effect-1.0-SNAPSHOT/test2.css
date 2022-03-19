@@ -1,0 +1,40 @@
+/*
+  Project name(项目名称)：JS_to_achieve_animation_effect 
+  File name(文件名): test2
+  Author(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/3/19 
+  Time(创建时间)： 21:03
+  Version(版本): 1.0
+  Description(描述)： 无
+ */
+
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+#view {
+    position: relative;
+    width: 320px;
+    height: 120px;
+    border: 10px solid #bc8f8f;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+#img_list {
+    position: absolute;
+    width: 960px;
+}
+
+#img_list li {
+    float: left;
+    width: 320px;
+    height: 120px;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：JS_to_achieve_animation_effect
+  File name(文件名): test1
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/3/19
+  Time(创建时间)： 20:51
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test1.css">
+</head>
+<body>
+<div id="box">
+    <span id="share">分享</span>
+</div>
+<script>
+    //onload属性是一个事件处理程序 ，用于处理Window 、 XMLHttpRequest 、 <img>元素等上的load 事件。
+    //load事件在给定资源已加载时触发。
+    window.onload = function ()
+    {
+        //动画
+        var div = document.getElementById("box");
+        var timer = null;
+        //当用户将鼠标移到特定元素上时触发mouseover事件。
+        div.onmouseover = function ()
+        {
+            startMove(0);
+        };
+        //当鼠标离开元素时触发mouseout事件。例如，当鼠标从网页中的图像移开时，会针对该图像元素引发mouseout事件。
+        div.onmouseout = function ()
+        {
+            startMove(-200);
+        };
+
+        function startMove(targetPosition)
+        {
+            //clearInterval()方法取消了之前通过调用setInterval()建立的定时重复动作。
+            clearInterval(timer);
+            var speed = 0;
+            if (targetPosition < 0)
+            {
+                speed = -10;
+            }
+            else
+            {
+                speed = 10;
+            }
+            timer = setInterval(function ()
+            {
+                if (div.offsetLeft === targetPosition)
+                {
+                    clearInterval(timer);
+                }
+                else
+                {
+                    div.style.left = div.offsetLeft + speed + 'px';
+                }
+            }, 17);
+        }
+    };
+</script>
+</body>
+</html>
